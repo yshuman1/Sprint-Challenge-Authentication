@@ -1,6 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
+const mongoose = require('mongoose');
 
 const routes = require('./api/routes/routes');
 
@@ -15,6 +16,13 @@ server.use(bodyParser.json());
 server.use(cors());
 
 routes(server);
+
+// if (process.env.NODE_ENV !== 'test') {
+//   server.listen(5000, () => console.log('App running on port 5000'));
+//   mongoose.connect('mongodb://localhost/auth-users')
+//         .then(() => console.log('Successfully connected to MongoDB'))
+//         .catch(err => console.log('Error connecting to MongoDB'));
+// };
 
 module.exports = {
   server

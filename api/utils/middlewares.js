@@ -1,7 +1,7 @@
 const jwt = require('jsonwebtoken');
 
 const User = require('../models/userModels');
-const { mysecret } = require('../../config');
+const  mysecret  = require('../../config');
 
 const authenticate = (req, res, next) => {
   // You won't need to change anything in this file here.
@@ -19,6 +19,6 @@ const authenticate = (req, res, next) => {
   }
 };
 
-module.exports = {
+module.exports = 
   authenticate
-};
+;
